@@ -1,0 +1,70 @@
+if(typeof(A4page) == 'undefined') A4page = {}; A4page.Zone = [];
+A4page.Zone["H1"]={"zonecode":"H1",content:[{ "aid":"40708", "zid":"173",	"title":"<font color=blue><b>法语菜鸟直通A1的方法！</b></font>",	"link":"http://fr.yeshj.com/new/p168999/",	"advtype":"T",	"source":"",	"adFormCode":"H1",  "protected":false },{ "aid":"39518", "zid":"173",	"title":"请个老外当家教——免费体验",	"link":"http://laowaiwang.com/referral/gate/67173c69-a66b-11e0-839a-003048632b0c",	"advtype":"T",	"source":"",	"adFormCode":"H1",  "protected":false },{ "aid":"38978", "zid":"173",	"title":"日语零基础一年直达N2的方法>>",	"link":"http://jp.yeshj.com/new/p175799/",	"advtype":"T",	"source":"",	"adFormCode":"H1",  "protected":false },{ "aid":"37503", "zid":"173",	"title":"正在疯抢中的考研冲刺押题课程.......",	"link":"http://www.hjbook.net/countdown",	"advtype":"T",	"source":"",	"adFormCode":"H1",  "protected":false }]};A4page.Zone["H2"]={"zonecode":"H2",content:[{ "aid":"11614", "zid":"280",	"title":"学习地道英语如此轻松有趣 ",	"link":"http://bulo.yeshj.com",	"advtype":"T",	"source":"",	"adFormCode":"H2",  "protected":false }]};A4page.Zone["H3"]={"zonecode":"H3",content:[{ "aid":"38071", "zid":"859",	"title":"三个月，轻松拿下中高级口译",	"link":"http://www.hjenglish.com/new/p198313/",	"advtype":"T",	"source":"",	"adFormCode":"H3",  "protected":false },{ "aid":"37949", "zid":"859",	"title":"学日语，入门仅需12天！",	"link":"http://jp.yeshj.com/new/p122741/",	"advtype":"T",	"source":"",	"adFormCode":"H3",  "protected":false },{ "aid":"36674", "zid":"859",	"title":"中英文笔记符号全面解析",	"link":"http://www.kaosee.cn/",	"advtype":"T",	"source":"",	"adFormCode":"H3",  "protected":false },{ "aid":"36673", "zid":"859",	"title":"教你如何一天收入5000！",	"link":"http://www.cemachina.com",	"advtype":"T",	"source":"",	"adFormCode":"H3",  "protected":false }]};
+
+function show_a4_zone(zonecode)
+{
+		if( typeof(A4page.Zone[zonecode]) == "undefined" ) return;
+		if(A4page.Zone[zonecode].content[0].advtype == "T"){
+
+			for (var i=0, post; post = A4page.Zone[zonecode].content[i]; i++) {
+
+				if(zonecode.substring(0,1) == "H")
+					document.write("<a href=\"http://a4.yeshj.com/rd/"+ post.aid +"/\" target=\"_blank\">" + post.title +"</a>&nbsp;&nbsp;");
+				else
+					document.write("<a href=\"http://a4.yeshj.com/rd/"+ post.aid +"/\" target=\"_blank\">" + post.title +"</a><br/>");
+			}			
+
+		}	else if (A4page.Zone[zonecode].content[0].advtype == "P"){
+
+			if( A4page.Zone[zonecode].content.length == 1 ){
+
+				document.write("<a href=\"http://a4.yeshj.com/rd/"+ A4page.Zone[zonecode].content[0].aid +"/\" title=\""+ A4page.Zone[zonecode].content[0].title +"\" target=\"_blank\"><img src=\""+ A4page.Zone[zonecode].content[0].source +"\" border=\"0\"></a>");
+
+			}else{
+
+				for (var i=0, post; post = A4page.Zone[zonecode].content[i]; i++) {
+						document.write("<a href=\"http://a4.yeshj.com/rd/"+ post.aid +"/\" target=\"_blank\"><img src=\""+ post.source +"\" border=\"0\"></a><br/><br/>");
+				}						
+			}
+
+		}else if (A4page.Zone[zonecode].content[0].advtype == "F"){
+
+			//document.write(ConvertUbb(A4page.Zone[zonecode].content[0].source));
+            document.write(ConvertUbb2(A4page.Zone[zonecode].content[0].source,A4page.Zone[zonecode].content[0].aid));
+		}
+}
+
+function ConvertUbb(Source){
+	//定义ubb转换参数
+	var flash_ubb = /\[flash=(\d*),(\d*)\](\S*)\[\/flash\]/igm;
+	var flash_html= "<OBJECT codeBase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,22,0\" "
+	+ " classid=\"clsid:d27CDB6E-AE6D-11cf-96B8-444553540000\" "
+	+ "width=$1 height=$2>"
+	+ "<PARAM NAME=movie VALUE=\"$3\">"
+	+ "<PARAM NAME=quality VALUE=high>"
+	+ "<embed src=\"$3\" width=$1 height=$2 quality=high name=index type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\"/>"
+	+ "</OBJECT>";
+	//执行转换
+	Source=Source.replace(flash_ubb, flash_html );
+	return Source;
+}
+
+
+function ConvertUbb2(Source,aid){
+    //定义ubb转换参数
+	var flash_ubb = /\[flash=(\d*),(\d*)\](\S*)\[\/flash\]/igm;
+	var flash_html= "<div style=\"position:relative;\">"
+    + "<a target=\"_blank\" href=\"http://a4.yeshj.com/rd/"+aid+"/\" style=\"background:transparent url('http://bulo.hjenglish.com/images/spacer.gif') no-repeat;display:block;width:$1px;height:$2px;position:absolute;left:0;top:0;\"></a>"
+	+ "<OBJECT codeBase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,22,0\" "
+	+ " classid=\"clsid:d27CDB6E-AE6D-11cf-96B8-444553540000\" "
+	+ "width=$1 height=$2>"
+	+ "<PARAM NAME=\"movie\" VALUE=\"$3\">"
+	+ "<PARAM NAME=\"quality\" VALUE=\"high\">"
+	+ "<param value=\"opaque\" name=\"wmode\">"
+	+ "<embed src=\"$3\" width=$1 height=$2  quality=high name=index type=\"application/x-shockwave-flash\"  wmode=\"transparent\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\"/>"
+	+ "</OBJECT>"
+	+ "</div>";
+	//执行转换
+	Source=Source.replace(flash_ubb, flash_html );
+	return Source;
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true" />
+    
+    <package name="user" namespace="/user" extends="struts-default">
+       <action name="login" class="loginAction">
+         <result name="index" type="redirect">../index.jsp</result>  
+         <result name="error">../error.jsp</result>
+       </action>
+       <action name="logout" class="logoutAction">
+         <result name="index" type="redirect">../index.jsp</result>
+       </action>
+       <action name="register" class="registerAction">
+         <result name="index" type="redirect">../index.jsp</result>
+       </action>
+       <action name="generateValidateCode" class="generateValidateCodeAction" method="generateValidateCode">
+        <result type="stream">
+          <param name="contentType">image/jpeg</param>
+          <param name="inputName">inputStream</param>
+        </result>
+      </action>
+    </package>
+    
+    <package name="post" namespace="/post" extends="struts-default">
+       <action name="listPost" class="listPostAction">
+         <result name="list">../post.jsp</result>
+       </action>
+       <action name="readPost" class="readPostAction">
+         <result name="thread">../thread.jsp</result>
+       </action>
+       <action name="newPost" class="newPostAction">
+         <result name="success" type="chain">
+            listPost
+         </result>
+       </action>
+       <action name="replyPost" class="replyPostAction">
+         <result name="succ" type="chain">  
+            readPost
+         </result>
+       </action>
+    </package>
+    
+    <include file="struts-back.xml"></include>
+</struts>

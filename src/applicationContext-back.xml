@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+    <bean id="memberListAction" class="com.bbs.df.web.back.action.MemberListAction">
+       <property name="us" ref="usermgr"/>
+    </bean>
+    <bean id="boardListAction" class="com.bbs.df.web.back.action.BoardListAction">
+       <property name="bs" ref="boardmgr"/>
+    </bean>
+    <bean id="delMemberAction" class="com.bbs.df.web.back.action.DelMemberAction">
+       <property name="us" ref="usermgr"/>
+    </bean>
+    <bean id="postManageAction" class="com.bbs.df.web.back.action.PostManageAction">
+       <property name="ps" ref="postmgr"/>
+    </bean>
+    <bean id="delPostAction" class="com.bbs.df.web.back.action.DelPostAction">
+       <property name="ps" ref="postmgr"/>
+    </bean>
+    <bean id="loginAdminAction" class="com.bbs.df.web.back.action.LoginAdminAction">
+       <property name="us" ref="usermgr"/>
+    </bean>
+    <bean id="modifyPassAction" class="com.bbs.df.web.back.action.ModifyPassAction">
+       <property name="us" ref="usermgr"/>
+    </bean>
+    <bean id="addBoardAction" class="com.bbs.df.web.back.action.AddBoardAction">
+       <property name="bs" ref="boardmgr"/>
+    </bean>
+    <bean id="delBoardAction" class="com.bbs.df.web.back.action.DelBoardAction">
+       <property name="bs" ref="boardmgr"/>
+    </bean>
+</beans>

@@ -1,0 +1,122 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DropMenu ~~~~ */
+
+.dropmenu { 
+	padding-right: 15px !important; 
+	background-image: url(/images/ico_arrowdown.gif) !important; 
+	background-position: 100% 50% !important; 
+	background-repeat: no-repeat !important; cursor: pointer;
+
+}
+
+.popupmenu_popup { 
+	text-align: left; 
+	line-height: 1.4em; 
+	padding: 10px; 
+	overflow: hidden; 
+	border: 1px solid #BEBEBE; 
+	background: #FFF; 
+	background-repeat: repeat-x; 
+	background-position: 0 1px; 
+
+}
+
+
+.userinfopanel { 
+	border: 1px solid #000; 
+	line-height:180%;
+	background: #FFF; 
+	background-repeat: repeat-x; 
+	background-position: 0 0; 
+	padding: 6px 12px 6px 12px; 
+}
+
+.postauthor{
+	float:left;
+	margin-top:-2px !important;
+	margin-top:-1px;
+	padding-top:1px;
+}
+
+
+
+.postauthor a { padding: 4px 9px 3px 9px; border: solid #fff; border-width: 1px 1px 0;float:right;}
+
+.postauthor a.hover { border-color: #000; background-color: #FFF;  color: #000; text-decoration:none}
+
+
+
+.popupmenu_popup .postauthor a { color: #069; }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TopMenu ~~~~ */
+
+.drop_index{
+	width:110px;
+}
+
+.dropmenu_item{
+	border-bottom:solid 1px #EFEFEF;line-height:26px;height:26px;
+	padding-top:3px;
+}
+
+.dropmenu_item_bottom{
+	line-height:26px;height:26px;
+	padding-top:3px;
+}
+
+
+.drop_pannel_table{
+	width:140px;
+}
+
+.drop_pannel_td{
+	width:50%;
+	line-height:180%;
+	text-align:center
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MainMenu ~~~~ */
+
+a.linkpanel{
+	padding: 4px 9px 3px 9px; border: solid #fff; float:right;
+	border-width: 0;
+}
+
+a.linkpanel:hover{
+	border-color: #000; background-color: #fff;  color: #000; text-decoration:none;
+	border-width: 0;
+}
+
+.pann{
+	float:left;
+	border-right:solid 1px #000;
+	padding:4px 5px 1px 5px !important;
+	padding:4px 5px 0px 5px;
+	height:17px !important;
+	height:22px;
+}
+
+.pann_no{
+	float:left;
+	border-right:solid 1px #000;
+	padding:0px 5px 0px 5px;
+	width:50px !important;
+	width:61px;
+}
+
+.pann_white{
+	float:left;
+	border-right:solid 1px #000;
+	padding:4px 5px 1px 5px !important;
+	padding:4px 5px 0px 5px;
+	height:17px !important;
+	height:22px;
+	background:white;
+}
+
+.pann_msg{
+	text-align:right;
+	font-family:verdana;
+
+	background:white;
+	border-left:solid 1px black;
+}

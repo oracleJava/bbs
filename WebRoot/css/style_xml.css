@@ -1,0 +1,272 @@
+body
+	{
+	text-align: center;
+	font: 12px ËÎÌו;
+	margin:0px;
+	}
+
+
+/*top menu*/
+.topdiv{
+	width:99%;
+	margin:auto;
+	border-top:1px solid white;
+	border-bottom:1px solid white;
+	height:22px;
+	line-height:22px;
+}
+
+.topdiv_table{
+	width:100%;
+}
+
+.bg_site{
+	font-family:arial;
+	text-align:right;
+}
+
+.bg_comm{
+	background:#F6F6F6;text-align:center;
+	width:320px;
+	padding:3px 5px 0 5px;
+}
+
+.bg_select{
+	background:#EAE8DF;text-align:center;
+	text-align:center;
+}
+
+.bar_menu{
+	border:solid 1px #272727;
+	background:#F7F7F7;
+	width:97%;
+	margin:auto;
+}
+
+.bar_dict{
+	border-left:1px solid #804000;border-right:1px solid #804000;border-bottom:1px solid #804000;
+	background:url(/images/bg_menubar.gif);
+	width:97%;
+	margin:auto;
+}
+
+
+.bar_dict_input{
+	width:200px;height:26px;line-height:26px;border:0px solid red;color:#3FA6E9;
+	padding:6px 0px 0px 8px !important;
+	padding:0px 0px 0px 8px;
+	background:url(/images/bg_dict_input.gif);
+	background-repeat:no-repeat;
+	background-position:left center;
+}
+
+.bar_left{
+	text-align:center;
+}
+
+.bar_right{
+	padding:2px 0px 0px 0px;
+	text-align:left;
+}
+
+.dict_input{
+	border:solid 1px gray;background:white;
+}
+
+.dict_btn{
+	border:solid 1px gray;background:white;
+}
+
+/*top menu end*/
+
+/*nav bar*/
+.nav_border{
+	width:97%;
+	background:#EFEFEF;
+	margin:auto;
+}
+.nav_inner{
+	padding-top:2px !important;
+	padding-top:3px;
+	width:97%;
+	text-align:left;
+	border:solid 1px #DEDEDE;
+	height:25px;
+}
+/*nav bar end*/
+
+.tableBorder1{
+	width:97%;
+	background:#4E4227
+}
+
+.bold{
+	font-weight: bold;
+}
+.adbar{
+	border: 1px solid #4E4227; 
+	border-bottom:0px;
+	width : 96.5% !important;
+	width : 97%;
+	height:30px;
+	text-align : left; 
+	padding-right: 5px;
+	overflow :hidden;
+	margin:auto;
+}
+.area_manage{
+	border: 1px solid #4E4227; 
+	border-bottom:0px;
+	width : 96.5% !important;
+	width : 97%;
+	text-align : right; 
+	padding-left: 5px;
+	padding-top:  8px;
+	padding-bottom: 5px;
+	overflow :hidden;
+	margin:auto;
+}
+.area_top{
+	border: 1px solid #4E4227; 
+	border-top:0px;
+	width : 96.5% !important;
+	width : 97%;
+	text-align : center; 
+	padding-left: 5px;
+	padding-top:  8px;
+	padding-bottom: 5px;
+	overflow :hidden;
+	margin:auto;
+}
+.th_online{
+	border: 1px solid #4E4227; 
+	border-top:0px;
+	width : 96.5% !important;
+	width : 97%;
+	line-height:27px;
+	text-align : left; 
+	padding-left: 5px;
+	margin:auto;
+}
+.th
+	{
+	border: 1px solid #4E4227; 
+	width : 96.5% !important;
+	width : 97%;
+	height:26px;
+	line-height:27px;
+	text-align : left; 
+	padding-left: 5px;
+	overflow :hidden;
+	background: #E4E8EF;
+	background:url(/skin/default/bg1.gif);
+	margin:auto;
+
+	}
+.list
+	{
+	border-left : 1px solid #4E4227; 
+	border-right : 1px solid #4E4227;
+	border-bottom : 1px solid #4E4227; 
+	width : 96.5% !important;
+	width : 97%;
+	height:26px;
+	line-height:27px;
+	text-align : left; 
+	padding-left: 5px;
+	overflow :hidden;
+	background: #fff;
+	margin:auto;
+	}
+.list_right
+	{
+	float:right;
+	width:380px;
+	border-left : 1px solid #4E4227; 
+	}
+.list_author
+	{
+	float:left;
+	text-align : center;
+	width:100px;
+	border-right : 1px solid #4E4227;
+	}
+.list_count
+	{
+	float:left;
+	text-align : center;
+	width:70px;
+	border-right : 1px solid #4E4227;
+	}
+.list_time
+	{
+	float:left;
+	text-align : left;
+	width:200px;
+	margin-left:5px;
+	}
+.list_status{
+	float:left;border-right:1px solid #4E4227;
+	width:30px;
+	height:26px;
+	text-align:center;
+	line-height:27px;
+}
+.list_status2{
+	float:left;border-right:1px solid #4E4227;
+	width:30px;
+	height:26px;
+	padding-top:7px;
+	text-align:center;
+}
+
+
+/*dispbbs*/
+#dipbbs_content{
+	font-family:verdana;
+	font-size:14px;
+	line-height:150%;
+}
+
+
+#dipbbs_content a:link{text-decoration:none ;color:#075DB3}
+#dipbbs_content a:visited{text-decoration:none;color:#075DB3}
+#dipbbs_content a:hover{text-decoration: underline;color:red}
+
+#dipbbs_content a.yellow:link{text-decoration:none ;color:#ff6600}
+#dipbbs_content a.yellow:visited{text-decoration:none;color:#ff6600}
+#dipbbs_content a.yellow:hover{text-decoration: underline;color:red}
+
+
+/*list tab*/
+
+.tab_posi{
+	border:solid 0px red;
+	padding:3px;
+	position:relative;top:-7px;left:10px;
+}
+
+
+a.tab:link		 {background:#FFF6E2;border:solid 1px #787966;padding:3px 6px 2px 6px;border-right:0px;text-decoration:none}
+a.tab:visited	 {background:#FFF6E2;border:solid 1px #787966;padding:3px 6px 2px 6px;border-right:0px;text-decoration:none}
+a.tab:hover		 {background:#FFFFFF;border:solid 1px #787966;padding:3px 6px 2px 6px;border-right:0px;text-decoration:none}
+a.tab:active	 {background:#FFF6E2;border:solid 1px #787966;padding:3px 6px 2px 6px;border-right:0px;text-decoration:none}
+
+a.tab_right:link	 {background:#FFF6E2;border:solid 1px #787966;padding:3px 6px 2px 6px;text-decoration:none}
+a.tab_right:visited	 {background:#FFF6E2;border:solid 1px #787966;padding:3px 6px 2px 6px;text-decoration:none}
+a.tab_right:hover	 {background:#FFFFFF;border:solid 1px #787966;padding:3px 6px 2px 6px;text-decoration:none}
+a.tab_right:active	 {background:#FFF6E2;border:solid 1px #787966;padding:3px 6px 2px 6px;text-decoration:none}
+
+a.tab_sel_left:link	 {background:#FFFFFF;border:solid 1px #787966;border-right:0px;padding:3px 6px 2px 6px;text-decoration:none;font-weight:bold}
+a.tab_sel_left:visited	 {background:#FFFFFF;border:solid 1px #787966;border-right:0px;padding:3px 6px 2px 6px;text-decoration:none;font-weight:bold}
+a.tab_sel_left:hover	 {background:#FFFFFF;border:solid 1px #787966;border-right:0px;padding:3px 6px 2px 6px;text-decoration:none;font-weight:bold}
+a.tab_sel_left:active	 {background:#FFFFFF;border:solid 1px #787966;border-right:0px;padding:3px 6px 2px 6px;text-decoration:none;font-weight:bold}
+
+a.tab_sel_right:link	 {background:#FFFFFF;border:solid 1px #787966;padding:3px 6px 2px 6px;text-decoration:none;font-weight:bold}
+a.tab_sel_right:visited	 {background:#FFFFFF;border:solid 1px #787966;padding:3px 6px 2px 6px;text-decoration:none;font-weight:bold}
+a.tab_sel_right:hover	 {background:#FFFFFF;border:solid 1px #787966;padding:3px 6px 2px 6px;text-decoration:none;font-weight:bold}
+a.tab_sel_right:active	 {background:#FFFFFF;border:solid 1px #787966;padding:3px 6px 2px 6px;text-decoration:none;font-weight:bold}
+
+a.redlink:link{text-decoration:none ;color:#F70000}
+a.redlink:visited{text-decoration:none;color:#F70000}
+a.redlink:hover{text-decoration: underline;color:#F70000}

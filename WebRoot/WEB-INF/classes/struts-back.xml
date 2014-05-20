@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true" />
+    
+    <package name="backUser" namespace="/manager/backUser" extends="struts-default">
+       <action name="memberList" class="memberListAction">
+          <result name="succ">../memberManage.jsp</result>
+       </action>
+       <action name="delMember" class="delMemberAction">
+         <result name="succ" type="redirectAction">
+           memberList
+         </result>
+       </action>
+       <action name="loginAdmin" class="loginAdminAction">
+         <result name="succ" type="redirect">
+           ../index.jsp
+         </result>
+         <result name="error">
+           ../login.jsp
+         </result>
+       </action>
+       <action name="modifyPass" class="modifyPassAction">
+          <result name="succ">../modify.jsp</result>
+       </action>
+    </package>
+    <package name="board" namespace="/manager/board" extends="struts-default">
+       <action name="boardList" class="boardListAction">
+          <result name="succ">../boardManage.jsp</result>
+       </action>
+       <action name="addBoard" class="addBoardAction">
+          <result name="succ" type="chain">
+            boardList
+          </result>
+       </action>
+       <action name="delBoard" class="delBoardAction">
+          <result name="succ">../boardManage.jsp </result>
+       </action>
+    </package>
+    <package name="backPost" namespace="/manager/post" extends="struts-default">
+       <action name="postManage" class="postManageAction">
+          <result name="succ">../postManage.jsp</result>
+       </action>
+       <action name="delPost" class="delPostAction">
+          <result name="succ" type="redirectAction">
+             postManage
+          </result>
+       </action>
+    </package>
+    
+</struts>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!--
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+       <property name="locations">
+          <value>classpath:jdbc.properties</value>
+       </property>
+    </bean>
+    -->
+    <!-- 定义数据源Bean，使用C3P0数据源实现  -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+       <!--
+       <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+       <property name="jdbcUrl" value="jdbc:mysql://localhost/mybbs"></property>
+       <property name="user" value="root"></property>
+       <property name="password" value="dongfei"></property>
+       -->
+       
+       <property name="driverClass" value="${jdbc.driverClassName}"></property>
+       <property name="jdbcUrl" value="${jdbc.url}"></property>
+       <property name="user" value="${jdbc.username}"></property>
+       <property name="password" value="${jdbc.password}"></property>
+       <property name="maxPoolSize" value="20"></property>
+       <property name="minPoolSize" value="1"></property>
+       <property name="initialPoolSize" value="1"></property>
+       <property name="maxIdleTime" value="20"></property>
+    </bean>
+    
+    <!-- 定义了Hibernate的SessionFactory -->
+    
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+       <property name="dataSource" ref="dataSource"></property>
+       <property name="mappingResources">
+           <!-- 下面列出所有的Hibernate映射文件 -->
+           <list>
+             <value>com/bbs/df/po/Board.hbm.xml</value>
+             <value>com/bbs/df/po/User.hbm.xml</value>
+             <value>com/bbs/df/po/Post.hbm.xml</value>
+           </list>
+       </property>
+       
+       <property name="hibernateProperties">
+           <props>
+              <!-- 因为采用MySQL作为数据库系统，故使用MySQL方言 -->
+              <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+              <prop key="show_sql">true</prop>
+              <prop key="format_sql">true</prop>
+              <prop key="hibernate.hbm2ddl.auto">update</prop>
+              <prop key="hibernate.jdbc.batch_size">20</prop>
+              <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+              
+           </props>
+       </property>
+    </bean>
+    <bean id="loginAction" class="com.bbs.df.web.front.action.LoginAction">
+       <property name="umgr" ref="usermgr"/>
+    </bean>
+    <bean id="logoutAction" class="com.bbs.df.web.front.action.LogoutAction"/>
+    <bean id="registerAction" class="com.bbs.df.web.front.action.RegisterAction">
+       <property name="umgr" ref="usermgr"/>
+    </bean>
+    <bean id="generateValidateCodeAction" class="com.bbs.df.web.front.action.ValidateCodeAction"></bean>
+    
+    <bean id="listPostAction" class="com.bbs.df.web.front.action.ListPostAction">
+       <property name="pmgr" ref="postmgr"/>
+       <property name="bmgr" ref="boardmgr"/>
+    </bean>
+    
+    <bean id="readPostAction" class="com.bbs.df.web.front.action.ReadPostAction">
+       <property name="pmgr" ref="postmgr"/>
+    </bean>
+    
+    <bean id="replyPostAction" class="com.bbs.df.web.front.action.ReplyPostAction">
+       <property name="pmgr" ref="postmgr"/>
+       <property name="bmgr" ref="boardmgr"/>
+       <property name="umgr" ref="usermgr"/>
+    </bean>
+    
+    <bean id="newPostAction" class="com.bbs.df.web.front.action.NewPostAction">
+      <property name="pmgr" ref="postmgr"/>
+      <property name="bmgr" ref="boardmgr"/>
+      <property name="umgr" ref="usermgr"/>
+    </bean>
+    
+    <bean id="boardDao" class="com.bbs.df.dao.impl.BoardHibernateDao">
+       <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="userDao" class="com.bbs.df.dao.impl.UserHibernateDao">
+       <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="postDao" class="com.bbs.df.dao.impl.PostHibernateDao">
+       <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    
+    <bean id="usermgr" class="com.bbs.df.service.impl.UserManager">
+       <property name="userDao" ref="userDao"/>
+    </bean>
+     <bean id="postmgr" class="com.bbs.df.service.impl.PostManager">
+       <property name="postDao" ref="postDao"/>
+       <property name="userDao" ref="userDao"/>
+    </bean>
+     <bean id="boardmgr" class="com.bbs.df.service.impl.BoardManager">
+       <property name="boardDao" ref="boardDao"/>
+    </bean>
+    
+    <!-- 配置事务管理器Bean，因为使用Hibernate持久化技术，
+                           故使用HibernateTransactionManager事务管理器 -->
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+       
+       <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+      <tx:attributes>
+       
+        <tx:method name="find" read-only="true"/>
+       
+        <tx:method name="*"/>
+      </tx:attributes>
+    </tx:advice>
+    <aop:config>
+       <aop:pointcut id="postManagerOperation" expression="execution(* com.bbs.df.service.impl.PostManager.*(..))"/>
+       <aop:advisor advice-ref="txAdvice" pointcut-ref="postManagerOperation"/>
+    </aop:config>
+    <import resource="applicationContext-back.xml"/>
+</beans>

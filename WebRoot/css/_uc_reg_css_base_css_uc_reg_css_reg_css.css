@@ -1,0 +1,327 @@
+/*** reset ***/
+html {
+	color: #000;
+	background: #FFF;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+	margin: 0;
+	padding: 0;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+fieldset, img {
+	border: 0;
+}
+address, caption, cite, code, dfn, em, th, var {
+	font-style: normal;
+	font-weight: normal;
+}
+li {
+	list-style: none;
+}
+caption, th {
+	text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+q:before, q:after {
+	content: '';
+}
+abbr, acronym {
+	border: 0;
+	font-variant: normal;
+}
+sup {
+	vertical-align: text-top;
+}
+sub {
+	vertical-align: text-bottom;
+}
+input, textarea, select {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+}
+input, textarea, select { *font-size:100%}
+legend {
+	color: #000;
+}
+ins {
+	text-decoration: none;
+}
+legend {
+	color: #000;
+}
+
+/*** font ***/
+body {
+	font-size: 12px;
+	font-family: Verdana,Helvetica,SimSun,Arial, "Arial Unicode MS" ,MingLiu,PMingLiu, "MS Gothic" ,sans-serief;
+}
+select, input, button, textarea {
+	font: 99% arial,helvetica,clean,sans-serif;
+}
+table {
+	font-size: inherit;
+	font: 100%;
+}
+pre, code, kbd, samp, tt {
+	font-family: monospace; *font-size:108%;line-height:100%}
+	
+/*** base ***/
+h1 {
+	font-size: 138.5%;
+}
+h2 {
+	font-size: 123.1%;
+}
+h3 {
+	font-size: 108%;
+}
+h1, h2, h3 {
+	margin: 1em 0;
+}
+h1, h2, h3, h4, h5, h6, strong {
+	font-weight: bold;
+}
+abbr, acronym {
+	border-bottom: 1px dotted #000;
+	cursor: help;
+}
+em {
+	font-style: italic;
+}
+blockquote {
+	margin: 1em;
+}
+ul, ol, dl {
+	margin: 0;
+}
+li, dd {
+	list-style: none;
+	margin: 0;
+}
+
+.tabWithBorder th, .tabWithBorder td {
+	border: 1px solid #000;
+}
+th {
+	font-weight: bold;
+	text-align: center;
+}
+caption {
+	margin-bottom: .5em;
+	text-align: center;
+}
+
+
+/*** hj ***/
+.clear {
+	clear: both;
+}
+.hide {
+	display: none;
+}
+.txt_r {
+	text-align: right;
+}
+.txt_l {
+	text-align: left;
+}
+.txt_c {
+	text-align: center;
+}
+.txt_hide {
+	text-indent: -999em;
+}
+.bold {
+	font-weight: bold;
+}
+.fl {
+	float: left;
+	display: inline;
+}
+.fr {
+	float: right;
+	display: inline;
+}
+.poa {
+	position: absolute;
+}
+.por {
+	position: relative;
+}
+.mouse_p {
+	cursor: pointer;
+}
+.mouse_d {
+	cursor: default;
+}
+.red {
+	color: red;
+}
+a.red:link, a.red:visited, a.red:active {
+	color: red;
+}
+.big {
+	font-size: 14px;
+}
+.small {
+	font-size: 12px;
+}
+.indent {
+	text-indent: 2em;
+}
+
+
+a{color: #075DB3; text-decoration: underline;}
+a:hover{color: #FF6600; text-decoration: underline;}
+
+a.graylink{color: gray; text-decoration: none;background: #F0F0F0}
+a.graylink:hover{color: #ffffff; text-decoration: none; background: #003399}
+
+a.grayline:link		 {color: gray; text-decoration: underline;}
+a.grayline:visited	 {color: gray; text-decoration: underline;}
+a.grayline:hover	 {color: #FF6600; text-decoration: underline;}
+a.grayline:active	 {color: red; text-decoration: underline}
+
+a.gray{color: #808080; text-decoration: underline;}
+a.gray:hover{color: #FF6600; text-decoration: underline;}
+
+a.red, a.redlink{color:red;text-decoration:underline;}
+a.red:hover, a.redlink:hover{color:black;text-decoration:none;}
+
+a.green{color:#53861A;}
+a.green:hover{color:black;text-decoration:underline;}
+
+a.noline:link,a.noline:visited,a.noline:active{text-decoration:none;}
+a.noline:hover{text-decoration:underline;}
+
+.noline a{text-decoration:none;}
+
+table.empty {
+	border: solid 0px white;
+}
+/* ---- 通用样式 ---- */
+	
+.bottom_line {
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
+	border-bottom-color: #E5E5E5;	
+}
+
+.top_line {
+	border-top-style: dotted;
+	border-top-width: 1px;
+	border-top-color: #E5E5E5;	
+}
+
+
+/* ---- 容器布局 ---- */
+
+html {	
+	background: url("/uc/reg/images/background.png") repeat-x scroll 0 0 #AFE1F0;
+}
+
+#wrapper {
+	width: 960px;
+	height: 940px;			
+	margin: 0 auto;
+	background: url("/uc/reg/images/top.png") no-repeat;
+}
+
+#main {
+	width: 900px;
+	height: 760px;		
+	padding: 20px 30px 30px 30px;		
+	top: 76px;
+	position: relative;	
+	color: #666;		
+
+	border-top-width: 0px;
+	background-color: White;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;	
+}
+
+#header {
+	height: 90px;
+	margin-bottom: 10px;
+}
+
+#footer {
+	padding: 30px 10px 0px 10px;
+	color: #808080;
+	line-height: 30px;
+}
+
+#footer a.gray{
+	color: #808080;
+}
+
+#logo {
+	float: left;
+	width: 580px;
+	height: 80px;
+	background: url("/uc/reg/images/logo.png") no-repeat;
+	margin: 10px 0px 10px 0px;
+	cursor: pointer;
+}	
+
+#tips {
+	line-height: 20px;
+	color: #999;
+	float: right;
+	position: relative;
+	background: url("/uc/reg/images/tips.png") no-repeat;
+	width: 120px;
+	height: 50px;
+
+	margin-right: 15px;
+	margin-top: 32px;
+}
+
+#video {
+	float: right;
+	background: url("/uc/reg/images/video.png") no-repeat;
+	width: 116px;
+	height: 82px;
+	position: relative;
+	top: -5px;
+}
+
+#content {
+	width: 920px;
+	height: 610px;
+}	
+
+#content_title {
+	width: 400px;
+	height:32px;
+	margin-bottom: 5px;
+}
+
+/* ---- 欢迎页 ---- */
+
+#step1, #step2, #step3 {
+	width: 753px;
+	height: 33px;
+	margin: 20px 0px 20px 72px;
+}
+
+#step1 {
+	background: url("/uc/reg/images/step1.png") no-repeat;
+}
+
+#step2 {
+	background: url("/uc/reg/images/step2.png") no-repeat;
+}
+
+#step3 {
+	background: url("/uc/reg/images/step3.png") no-repeat;
+}
